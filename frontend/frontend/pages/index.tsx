@@ -4,6 +4,8 @@ import axios from "axios";
 import { SetStateAction, useState } from "react";
 import { useEffect } from "react";
 
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 const list = {
@@ -96,8 +98,8 @@ const list = {
 
 const Search = async()=>{
   try {
-    const response = await axios.post(`http://localhost:3000/categories/${category}/products`, {
-      companyname : company,
+    const response = await axios.get(`http://localhost:3000/categories/Phone/products`, {
+      companyname : "AMZ",
     });
     console.log(response.data);
    
@@ -127,14 +129,55 @@ export default function Home() {
     sortProducts('price'); 
   }, []);
 
+
+  const containerStyle = {
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: '20px',
+  };
+
+  const titleStyle = {
+    fontSize: '2rem',
+    color: '#333',
+    marginBottom: '20px',
+  };
+
+  const buttonStyle = {
+    backgroundColor: '#4CAF50',
+    border: 'none',
+    color: 'white',
+    padding: '10px 20px',
+    textAlign: 'center',
+    textDecoration: 'none',
+    display: 'inline-block',
+    fontSize: '16px',
+    margin: '4px 2px',
+    cursor: 'pointer',
+  };
+
+  const listStyle = {
+    listStyle: 'none',
+    padding: '0',
+  };
+
+  const listItemStyle = {
+    border: '1px solid #ddd',
+    marginTop: '-1px',
+    backgroundColor: 'black',
+    padding: '12px',
+    textAlign: 'left',
+
+  };
+
   return (
-    <div>
-      <h1>Products Page</h1>
-      <button onClick={() => sortProducts('price')}>Sort by Price</button>
-      <button onClick={() => sortProducts('rating')}>Sort by Rating</button>
-      <ul>
+    <div style={containerStyle}>
+      <h1 style={titleStyle}>Products Page</h1>
+      <button style={buttonStyle} onClick={() => sortProducts('price')}>Sort by Price</button>
+      <button style={buttonStyle} onClick={() => sortProducts('rating')}>Sort by Rating</button>
+      <button style={buttonStyle} onClick={() => Search()}>Search</button>
+      <ul style={listStyle}>
         {products.map((product) => (
-          <li key={product.productId}>
+          <li key={product.productId} style={listItemStyle}>
             <h2>{product.productName}</h2>
             <p>Price: ${product.price}</p>
             <p>Rating: {product.rating} Stars</p>
@@ -146,3 +189,26 @@ export default function Home() {
     </div>
   );
 }
+
+
+//   return (
+//     <div>
+//       <h1>Products Page</h1>
+//       <button onClick={() => sortProducts('price')}>Sort by Price</button>
+//       <button onClick={() => sortProducts('rating')}>Sort by Rating</button>
+//       <button onClick={() => Search()}>Search</button>
+//       <ul>
+//         {products.map((product) => (
+//           <li key={product.productId}>
+//             <h2>{product.productName}</h2>
+//             <p>Price: ${product.price}</p>
+//             <p>Rating: {product.rating} Stars</p>
+//             <p>Discount: {product.discount}%</p>
+//             <p>Availability: {product.availability === "yes" ? "In stock" : "Out of stock"}</p>
+//           </li>
+//         ))}
+//       </ul>
+
+//     </div>
+//   );
+// }

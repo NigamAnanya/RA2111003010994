@@ -23,7 +23,7 @@ app.get("/categories/:categoryname/products", async (req, res) => {
   try {
     const response = await axios.get(getProductsEndPoint, {
       headers: {
-        'Authorization': 'Bearer ' + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzEyMTU0OTcyLCJpYXQiOjE3MTIxNTQ2NzIsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImM2NDM2MDZjLTlmNTEtNDYyNy04MDIwLTQ5MGZmNDQzMjU5YSIsInN1YiI6ImFzMTQ1MEBzcm1pc3QuZWR1LmluIn0sImNvbXBhbnlOYW1lIjoiZ29NYXJ0IiwiY2xpZW50SUQiOiJjNjQzNjA2Yy05ZjUxLTQ2MjctODAyMC00OTBmZjQ0MzI1OWEiLCJjbGllbnRTZWNyZXQiOiJ5UU9JTUFlRFVFYlVueGR2Iiwib3duZXJOYW1lIjoiQW5hbnlhIE5pZ2FtIiwib3duZXJFbWFpbCI6ImFzMTQ1MEBzcm1pc3QuZWR1LmluIiwicm9sbE5vIjoiUkEyMTExMDAzMDEwOTk0In0.dUesY7Oiv7n9qZ4pKGBiwdLBKmcgi9tKAcQRilJwYZU" 
+        'Authorization': 'Bearer ' + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzEyMTU4NDI1LCJpYXQiOjE3MTIxNTgxMjUsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImI3MTZlNTk2LTY0ZGEtNDE2OS05YjM0LWY1MmE1MjBkMGQ2NCIsInN1YiI6ImFzMTQ1MEBzcm1pc3QuZWR1LmluIn0sImNvbXBhbnlOYW1lIjoiZ29NYXJ0IiwiY2xpZW50SUQiOiJiNzE2ZTU5Ni02NGRhLTQxNjktOWIzNC1mNTJhNTIwZDBkNjQiLCJjbGllbnRTZWNyZXQiOiJJTWlkcEdERXBVSXFTZEZnIiwib3duZXJOYW1lIjoiQW5hbnlhIE5pZ2FtIiwib3duZXJFbWFpbCI6ImFzMTQ1MEBzcm1pc3QuZWR1LmluIiwicm9sbE5vIjoiUkEyMTExMDAzMDEwOTk0In0.F1fyMaduesjsDSoG5vFrc9AGuFgMg7ys7lpwdwCLuXQ" 
       }
     });
 
