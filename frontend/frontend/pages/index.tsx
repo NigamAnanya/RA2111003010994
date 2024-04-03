@@ -190,25 +190,3 @@ export default function Home() {
   );
 }
 
-
-//   return (
-//     <div>
-//       <h1>Products Page</h1>
-//       <button onClick={() => sortProducts('price')}>Sort by Price</button>
-//       <button onClick={() => sortProducts('rating')}>Sort by Rating</button>
-//       <button onClick={() => Search()}>Search</button>
-//       <ul>
-//         {products.map((product) => (
-//           <li key={product.productId}>
-//             <h2>{product.productName}</h2>
-//             <p>Price: ${product.price}</p>
-//             <p>Rating: {product.rating} Stars</p>
-//             <p>Discount: {product.discount}%</p>
-//             <p>Availability: {product.availability === "yes" ? "In stock" : "Out of stock"}</p>
-//           </li>
-//         ))}
-//       </ul>
-
-//     </div>
-//   );
-// }
